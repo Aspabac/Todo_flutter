@@ -19,10 +19,14 @@ class TaskTile extends StatelessWidget {
       title: Text(
         taskTitle,
         style: TextStyle(
+            fontSize: 20.0,
+            fontWeight: FontWeight.w400,
+            color: Colors.white,
             decoration: isChecked ? TextDecoration.lineThrough : null),
       ),
       trailing: Checkbox(
-        activeColor: Colors.lightBlueAccent,
+        checkColor: Color(0xFF0A0E21),
+        activeColor: Colors.white,
         value: isChecked,
         onChanged: checkboxCallback,
       ),

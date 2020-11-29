@@ -9,54 +9,62 @@ class TasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
-        child: Icon(Icons.add),
-        onPressed: () {
-          showModalBottomSheet(
-              isScrollControlled: true,
-              context: context,
-              builder: (context) => AddTaskScreen((newTaskTitle) {
-                    // setState(() {
-                    //   tasks.add(Task(name: newTaskTitle));
-                    // });
-                    Navigator.pop(context);
-                  }));
-        },
+      floatingActionButton: Container(
+        width: 100.0,
+        height: 100.0,
+        child: FloatingActionButton(
+          foregroundColor: Colors.blueGrey,
+          backgroundColor: Color(0xFF0A0E21),
+          child: Icon(
+            Icons.note,
+            size: 50.0,
+          ),
+          onPressed: () {
+            showModalBottomSheet(
+                isScrollControlled: true,
+                context: context,
+                builder: (context) => AddTaskScreen((newTaskTitle) {
+                      // setState(() {
+                      //   tasks.add(Task(name: newTaskTitle));
+                      // });
+                      Navigator.pop(context);
+                    }));
+          },
+        ),
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             padding: EdgeInsets.only(
                 top: 60.0, left: 30.0, right: 30.0, bottom: 30.0),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 CircleAvatar(
                   child: Icon(
-                    Icons.list,
-                    size: 30.0,
+                    Icons.sports_soccer,
+                    size: 45.0,
                     color: Colors.lightBlueAccent,
                   ),
-                  backgroundColor: Colors.white,
+                  backgroundColor: Color(0xFF0A0E21),
                   radius: 30.0,
                 ),
                 SizedBox(
                   height: 10.0,
                 ),
                 Text(
-                  'ToDoMi',
+                  'Socker',
                   style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 50.0,
-                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF0A0E21),
+                    fontSize: 60.0,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  '${Provider.of<TaskData>(context).taskCount} Tasks',
+                  'You have ${Provider.of<TaskData>(context).taskCount} Tasks right now',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Color(0xFF0A0E21),
                     fontSize: 18.0,
                   ),
                 ),
@@ -67,7 +75,7 @@ class TasksScreen extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Color(0xFF0A0E21),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(20.0),
                       topRight: Radius.circular(20.0))),

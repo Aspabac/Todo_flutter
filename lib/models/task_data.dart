@@ -4,9 +4,9 @@ import 'package:todo_flutter/models/task.dart';
 
 class TaskData extends ChangeNotifier {
   List<Task> _tasks = [
-    Task(name: 'play soccer'),
-    Task(name: 'play game'),
-    Task(name: 'play football'),
+    Task(name: 'practice soccer'),
+    Task(name: 'run about 5km'),
+    Task(name: 'drink some protein'),
   ];
 
   int get taskCount {
